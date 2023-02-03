@@ -1,0 +1,25 @@
+.headers {
+    padding: 1rem;
+}
+
+.searchbar {
+    margin: 1.5rem;
+}
+
+.searchbar-self {
+    padding: 1.3rem;
+}
+
+.searchbtn {
+    border: none;
+    margin: -0.5rem;
+    padding: 0.5rem 0.7rem;
+}
+
+form {
+    justify-content: center;
+}
+
+h3 {
+    text-align: center;
+}

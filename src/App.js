@@ -4,12 +4,19 @@ import Library from './Library.js';
 
 function App() {
 
-    const [data, setData] = React.useState(null);
+    const [heroes, setHeroes] = React.useState(null);
+    const [minions, setMinions] = React.useState(null);
   
     React.useEffect(() => {
-      fetch("/non-hero-cards")
+      fetch("/heroes")
         .then((res) => res.json())
-        .then((data) => setData(data));
+        .then((heroData) => setHeroes(heroData));
+    }, []);
+
+    React.useEffect(() => {
+      fetch("/minions")
+        .then((res) => res.json())
+        .then((minionData) => setMinions(minionData));
     }, []);
   
     return (
@@ -26,7 +33,7 @@ function App() {
         </div>
 
         <Controls />
-        <Library cardData={data}/>
+        <Library heroData={heroes} minionData={minions} />
 
         {/* JavaScript used for Bootstrap */}
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

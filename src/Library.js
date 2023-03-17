@@ -2,27 +2,50 @@ import React, { useState } from "react";
 
 function Library(props) {
 
-  const [cardImages, setCardImages] = useState(null);
+  const [heroImages, setHeroImages] = useState([]);
+  const [minionImages, setminionImages] = useState([]);
 
   React.useEffect(() => {
-    if(props.cardData) {
-      setCardImages(props.cardData.map((cardImage, index) => {
-        return (
-          <div key={cardImage.id} className="col-2 text-center">
-            <figure className="figure">
-              <img src={cardImage.battlegrounds.image} className="figure-img img-fluid" alt="card-display" />
-            </figure>
-          </div>
-        );
-      }));
+    if(props.heroData) {
+      setHeroImages(
+        props.heroData.map((heroImage) => {
+          return (
+            <div key={heroImage.id} className="col-2 text-center">
+              <figure className="figure">
+                <img src={heroImage.battlegrounds.image} className="figure-img img-fluid" alt="card-display" />
+              </figure>
+            </div>
+          );
+        })
+      );
     }
-  }, [props.cardData]);
+  }, [props.heroData]);
+
+  React.useEffect(() => {
+    if(props.minionData) {
+      setminionImages(
+        props.minionData.map((minionImage) => {
+          return (
+            <div key={minionImage.id} className="col-2 text-center">
+              <figure className="figure">
+                <img src={minionImage.battlegrounds.image} className="figure-img img-fluid" alt="card-display" />
+              </figure>
+            </div>
+          );
+        })
+      );
+    }
+  }, [props.heroData]);
 
   return (
     <div className="container-fluid">
+      <h3>Heroes</h3>
+      <div className="row bg-warning text-white card-section">
+        {heroImages}
+      </div>
       <h3>Tier 1</h3>
       <div className="row bg-warning text-white card-section">
-        {cardImages}
+        {minionImages}
       </div>
       <h3>Tier 2</h3>
       <div className="row bg-warning text-white card-section">

@@ -2,6 +2,15 @@
     padding: 1rem;
 }
 
+.header-section {
+    background-image: url(/images/vintage-wallpaper.png);
+    background-repeat: repeat;
+}
+
+.filter-section {
+    background-color: brown;
+}
+
 .searchbar {
     margin: 1.5rem;
 }
@@ -21,5 +30,27 @@ form {
 }
 
 h3 {
+    /* border: 1px solid black; */
     text-align: center;
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+}
+
+.card-section {
+    /* border: 1px solid black; */
+    padding-left: 5rem;
+    padding-right: 5rem;
+}
+
+.hero-name {
+    position: relative;
+    top: -1rem;
+    color: black;
+    font-weight: bold;
+    font-size: large;
+}
+
+.hero {
+    /* border: 1px solid black; */
+    margin-top: -0.8rem;
 }

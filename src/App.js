@@ -3,27 +3,12 @@ import Controls from './Controls.js';
 import Library from './Library.js';
 
 function App() {
-
-    const [heroes, setHeroes] = React.useState(null);
-    const [minions, setMinions] = React.useState(null);
-  
-    React.useEffect(() => {
-      fetch("/heroes")
-        .then((res) => res.json())
-        .then((heroData) => setHeroes(heroData));
-    }, []);
-
-    React.useEffect(() => {
-      fetch("/minions")
-        .then((res) => res.json())
-        .then((minionData) => setMinions(minionData));
-    }, []);
   
     return (
       <div className="container-fluid">
 
         {/* Section containing the page description */}
-        <div className="row justify-content-center bg-dark text-white header-section">
+        <div className="row justify-content-center text-white header-section">
           <div className="col-4 text-center">
             <div className="headers">
               <h2>Hearthstone</h2>
@@ -33,7 +18,7 @@ function App() {
         </div>
 
         <Controls />
-        <Library heroData={heroes} minionData={minions} />
+        <Library />
 
         {/* JavaScript used for Bootstrap */}
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

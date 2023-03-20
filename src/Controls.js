@@ -1,32 +1,30 @@
 import React, { useState } from 'react';
 
-function Controls() {
-
-  const [card, setCard] = useState(null);
-
-  React.useEffect(() => {
-    console.log(card);
-  }, [card]);
+function Controls(props) {
 
   function handleSubmit(e) {
     e.preventDefault();
-    /* console.log(document.getElementById('cardsearch').value);
-    fetch("/search-card-by-name", {
-      method: 'POST',
-      header: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({'cardsearch': document.getElementById('cardsearch').value}),
-    })
-      .then((res) => res.json())
-      .then((card) => setCard(card)); */
   }
+
   return (
     <div className="container-fluid">
       {/* Section containing the filter and search options */}
-      <div className="row bg-info filter-section">
-        {/* Search (form) bar and button */}
-        <div className="col searchbar">
+      <div className="row filter-section">
+        {/* Controls for filtering cards by tier */}
+        <div className="col-4 tier-filters">
+          {/* {props.Tiers.map((Tier, tier) => {
+            return (
+              <button
+                className="btn-dark text-white p-1 px-2 mx-5 btn fw-bold"
+                key={tier}
+              >
+                {Tier}
+              </button>
+            );
+          })} */}
+        </div>
+        {/* Search bar and button */}
+        <div className="col-4 searchbar">
           <form className="form-inline" onSubmit={handleSubmit}>
             <label className="sr-only" for="cardsearch">Card Search</label>
             <div className="input-group">
